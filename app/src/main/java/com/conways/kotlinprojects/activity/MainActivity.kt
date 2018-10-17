@@ -1,11 +1,13 @@
-package com.conways.kotlinprojects
+package com.conways.kotlinprojects.activity
 
-import android.os.Build
 import android.os.Bundle
-import android.support.annotation.RequiresApi
 import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import com.conways.kotlinprojects.R
+import com.conways.kotlinprojects.fragment.FruitFragment
+import com.conways.kotlinprojects.fragment.MeatFragment
+import com.conways.kotlinprojects.fragment.VegetablesFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -18,7 +20,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         private var INDEX_FRUIT_TAG = "fruit"
         private var INDEX_MEAT_TAG = "meat"
         private var INDEX_VEGETABLES_TAG = "vegetables"
-        private var CORRENT_INDEX = "corrent_index"
+        private var CURRENT_INDEX = "current_index"
     }
 
     var fruitFragment: FruitFragment? = null
@@ -33,7 +35,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
         init()
         if (null != savedInstanceState) {
-            index = savedInstanceState.getInt(CORRENT_INDEX)
+            index = savedInstanceState.getInt(CURRENT_INDEX)
             fruitFragment = supportFragmentManager.findFragmentByTag(INDEX_FRUIT_TAG) as FruitFragment?
             meatFragment = supportFragmentManager.findFragmentByTag(INDEX_MEAT_TAG) as MeatFragment?
             vegetablesFragment = supportFragmentManager.findFragmentByTag(INDEX_VEGETABLES_TAG) as VegetablesFragment?
@@ -142,7 +144,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onSaveInstanceState(outState: Bundle?) {
         super.onSaveInstanceState(outState)
         if (outState != null) {
-            outState.putInt(CORRENT_INDEX, this.index!!)
+            outState.putInt(CURRENT_INDEX, this.index!!)
         }
     }
 }
