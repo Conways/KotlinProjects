@@ -2,7 +2,6 @@ package com.conways.kotlinprojects.activity
 
 import android.os.Bundle
 import android.support.v4.app.FragmentTransaction
-import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.conways.kotlinprojects.R
 import com.conways.kotlinprojects.fragment.FruitFragment
@@ -10,7 +9,7 @@ import com.conways.kotlinprojects.fragment.MeatFragment
 import com.conways.kotlinprojects.fragment.VegetablesFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : BaseActivity(), View.OnClickListener {
 
     companion object {
         private var INDEX_FRUIT = 0
