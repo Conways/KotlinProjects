@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorMain"
+    android:background="@color/colorGrayBg"
     android:orientation="vertical">
 
     <FrameLayout
@@ -17,6 +17,8 @@
         app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
     </FrameLayout>
+
+
 
     <TextView
         android:id="@+id/activity_main_index_fruit"
@@ -69,4 +71,11 @@
         app:layout_constraintLeft_toRightOf="@id/activity_main_index_meat"
         app:layout_constraintRight_toRightOf="parent"/>
 
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/colorGrayLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="48dp"/>
 </android.support.constraint.ConstraintLayout>
