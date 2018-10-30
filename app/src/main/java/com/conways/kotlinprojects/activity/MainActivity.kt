@@ -85,8 +85,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 } else {
                     fragmentTransaction.show(fruitFragment!!)
                 }
-                activity_main_index_fruit?.setCompoundDrawablesWithIntrinsicBounds(null, getDrawable(R.drawable.ic_fruit_checked), null, null)
-                activity_main_index_fruit?.setTextColor(resources.getColor(R.color.colorMain))
+                activity_main_index_fruit?.setCompoundDrawablesWithIntrinsicBounds(null, getAppDrawable(R.drawable.ic_fruit_checked), null, null)
+                activity_main_index_fruit?.setTextColor(getAppColor(R.color.colorMain))
             }
 
             INDEX_MEAT -> {
@@ -96,8 +96,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 } else {
                     fragmentTransaction.show(meatFragment!!)
                 }
-                activity_main_index_meat?.setCompoundDrawablesWithIntrinsicBounds(null, getDrawable(R.drawable.ic_meat_checked), null, null)
-                activity_main_index_meat?.setTextColor(resources.getColor(R.color.colorMain))
+                activity_main_index_meat?.setCompoundDrawablesWithIntrinsicBounds(null, getAppDrawable(R.drawable.ic_meat_checked), null, null)
+                activity_main_index_meat?.setTextColor(getAppColor(R.color.colorMain))
             }
 
             INDEX_VEGETABLES -> {
@@ -107,8 +107,8 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 } else {
                     fragmentTransaction.show(vegetablesFragment!!)
                 }
-                activity_main_index_vegetables?.setCompoundDrawablesWithIntrinsicBounds(null, getDrawable(R.drawable.ic_vegetables_checked), null, null)
-                activity_main_index_vegetables?.setTextColor(resources.getColor(R.color.colorMain))
+                activity_main_index_vegetables?.setCompoundDrawablesWithIntrinsicBounds(null, getAppDrawable(R.drawable.ic_vegetables_checked), null, null)
+                activity_main_index_vegetables?.setTextColor(getAppColor(R.color.colorMain))
 
             }
         }
@@ -119,15 +119,12 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
     fun resetAll(fragmentTransaction: FragmentTransaction) {
         if (null != fruitFragment) {
-
             fragmentTransaction.hide(fruitFragment!!)
         }
         if (null != meatFragment) {
-
             fragmentTransaction.hide(meatFragment!!)
         }
         if (null != vegetablesFragment) {
-
             fragmentTransaction.hide(vegetablesFragment!!)
         }
 
@@ -135,9 +132,9 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         activity_main_index_meat?.setCompoundDrawablesWithIntrinsicBounds(null, getDrawable(R.drawable.ic_meat_normal), null, null)
         activity_main_index_vegetables?.setCompoundDrawablesWithIntrinsicBounds(null, getDrawable(R.drawable.ic_vegetables_normal), null, null)
 
-        activity_main_index_fruit?.setTextColor(resources.getColor(R.color.colorGrayDark))
-        activity_main_index_meat?.setTextColor(resources.getColor(R.color.colorGrayDark))
-        activity_main_index_vegetables?.setTextColor(resources.getColor(R.color.colorGrayDark))
+        activity_main_index_fruit?.setTextColor(getAppColor(R.color.colorGrayDark))
+        activity_main_index_meat?.setTextColor(getAppColor(R.color.colorGrayDark))
+        activity_main_index_vegetables?.setTextColor(getAppColor(R.color.colorGrayDark))
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
